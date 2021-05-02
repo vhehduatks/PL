@@ -1,6 +1,6 @@
 // Abstract syntax for the language C++Lite,
 // exactly as it appears in Appendix B.
-package PL.Clite_student;
+
 
 import java.util.*;
 

@@ -4,71 +4,30 @@
     // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
     "version": "0.2.0",
     "configurations": [
-
         {
             "type": "java",
-            "name": "Launch Parser",
+            "name": "Launch test",
             "request": "launch",
-            "mainClass": "Parser",
-            "projectName": "PL_41fa8c4f"
-        },
-        {
-            "type": "java",
-            "name": "Launch Lexer",
-            "request": "launch",
-            "mainClass": "Lexer",
-            "projectName": "PL_41fa8c4f"
-        },
-        {
-            "type": "java",
-            "name": "Launch StaticTypeCheck",
-            "request": "launch",
-            "mainClass": "StaticTypeCheck",
-            "projectName": "PL_41fa8c4f"
+            "mainClass": "test"
         },
         {
             "type": "java",
             "name": "Launch Parser",
             "request": "launch",
-            "mainClass": "PL.Clite_student.Parser",
-            "projectName": "Git_Shin_Hyeong_Hwan_b00ce784",
-            "args": "java_argv.txt"
+            "mainClass": "PL.Clite_student.Parser"
         },
         {
             "type": "java",
             "name": "Launch Lexer",
             "request": "launch",
-            "mainClass": "PL.Clite_student.Lexer",
-            "projectName": "Git_Shin_Hyeong_Hwan_b00ce784",
+            "mainClass": "PL.Clite_student.Lexer"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}",
             "args": "java_argv.txt"
-        },
-        {
-            "name": "Python: Current File",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "g++.exe - 활성 파일 빌드 및 디버그",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": true,
-            "MIMode": "gdb",
-            "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
-            "setupCommands": [
-                {
-                    "description": "gdb에 자동 서식 지정 사용",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "C/C++: g++.exe 활성 파일 빌드"
         }
     ]
 }

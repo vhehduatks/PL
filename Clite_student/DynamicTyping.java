@@ -2,7 +2,7 @@
 // for a dynamically typed language.
 // The meaning M of a Statement is a State.
 // The meaning M of a Expression is a Value.
-package PL.Clite_student;
+
 public class DynamicTyping extends Semantics {
     
     State M (Program p) { 

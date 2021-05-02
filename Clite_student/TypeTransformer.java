@@ -1,5 +1,5 @@
 import java.util.*;
-package PL.Clite_student;
+
 public class TypeTransformer {
 
     public static Program T (Program p, TypeMap tm) {

@@ -1,4 +1,4 @@
-package PL.Clite_student;
+
 public class Token {
 
     private static final int KEYWORDS = TokenType.Eof.ordinal();//전체 키워드 열거 객체 순번 기본값은 Eof의 순번

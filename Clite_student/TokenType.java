@@ -1,4 +1,4 @@
-package PL.Clite_student;
+
 public enum TokenType {
      Bool, Char, Else, False, Float,
      If, Int, Main, True, While,

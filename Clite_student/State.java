@@ -1,4 +1,4 @@
-package PL.Clite_student;
+
 import java.util.*;
 
 public class State extends HashMap<Variable, Value> { 

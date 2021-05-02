@@ -1,7 +1,7 @@
 // Following is the semantics class:
 // The meaning M of a Statement is a State
 // The meaning M of a Expression is a Value
-package PL.Clite_student;
+
 public class Semantics {
 
     State M (Program p) { 

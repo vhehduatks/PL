@@ -1,5 +1,5 @@
 // StaticTypeCheck.java
-package PL.Clite_student;
+
 import java.util.*;
 
 // Static type checking for Clite is defined by the functions 
