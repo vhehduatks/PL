@@ -4,6 +4,28 @@
     // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
     "version": "0.2.0",
     "configurations": [
+
+        {
+            "type": "java",
+            "name": "Launch Parser",
+            "request": "launch",
+            "mainClass": "Parser",
+            "projectName": "PL_41fa8c4f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Lexer",
+            "request": "launch",
+            "mainClass": "Lexer",
+            "projectName": "PL_41fa8c4f"
+        },
+        {
+            "type": "java",
+            "name": "Launch StaticTypeCheck",
+            "request": "launch",
+            "mainClass": "StaticTypeCheck",
+            "projectName": "PL_41fa8c4f"
+        },
         {
             "type": "java",
             "name": "Launch Parser",
