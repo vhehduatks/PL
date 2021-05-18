@@ -6,27 +6,16 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch test",
-            "request": "launch",
-            "mainClass": "test"
-        },
-        {
-            "type": "java",
-            "name": "Launch Parser",
-            "request": "launch",
-            "mainClass": "PL.Clite_student.Parser"
-        },
-        {
-            "type": "java",
             "name": "Launch Lexer",
             "request": "launch",
-            "mainClass": "PL.Clite_student.Lexer"
+            "mainClass": "Lexer",
+            "projectName": "PL_d77e3248"
         },
         {
             "type": "java",
             "name": "Launch Current File",
             "request": "launch",
-            "mainClass": "${file}",
+            "mainClass": "",
             "args": "java_argv.txt"
         }
     ]

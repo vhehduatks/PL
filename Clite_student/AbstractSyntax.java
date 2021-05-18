@@ -1,7 +1,6 @@
 // Abstract syntax for the language C++Lite,
 // exactly as it appears in Appendix B.
 
-
 import java.util.*;
 
 class Program {
