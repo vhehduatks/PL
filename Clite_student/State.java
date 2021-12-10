@@ -22,4 +22,14 @@ public class State extends HashMap<Variable, Value> {
         return this;
     }
 
+    public void display() {
+        System.out.print("{ ");
+		String sep = "";
+		for (Variable key : keySet( )) {
+			System.out.print(sep + "<" + key + ", " + get(key) + ">");
+			sep = ", ";
+		}
+		System.out.println(" }");
+    }
+
 }

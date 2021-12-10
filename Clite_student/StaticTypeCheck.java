@@ -93,6 +93,23 @@ public class StaticTypeCheck {
             return;
         }
         // student exercise
+        //-----------------------------
+        if (e instanceof Unary) {
+            Unary u = (Unary) e;
+            Type type = typeOf(u.term, tm); //start here
+            V(u.term, tm);
+            if (u.op.NotOp()) {
+                check((type == Type.BOOL), "type error for NotOp " + u.op);
+            } 
+            else if (u.op.NegateOp()) {
+                check((type == (Type.INT) || type == (Type.FLOAT)), "type error for NegateOp " + u.op);
+            }
+            else {
+                throw new IllegalArgumentException("should never reach here UnaryOp error");
+            }
+            return;
+        }
+        //-----------------------------
         throw new IllegalArgumentException("should never reach here");
     }
 
@@ -121,7 +138,39 @@ public class StaticTypeCheck {
             return;
         } 
         // student exercise
+        //---------------------------
+        else if (s instanceof Conditional) {
+            Conditional c = (Conditional)s;
+            V(c.test, tm); 
+            Type testtype = typeOf(c.test, tm);
+            if (testtype == Type.BOOL) {
+                V(c.thenbranch, tm); 
+                V(c.elsebranch, tm); 
+                return;
+            }else {
+                check( false, "poorly typed if in Conditional: " + c.test);
+            }
+        }
+        else if (s instanceof Loop) {
+            Loop l = (Loop)s; 
+            V(l.test, tm);
+            Type testtype = typeOf(l.test, tm);
+            if (testtype == Type.BOOL) {
+                V(l.body, tm);
+            }else {
+                check ( false, "poorly typed test in while Loop in Conditional: " + l.test);
+            }
+        }
+        else if (s instanceof Block) {
+            Block b = (Block)s;
+            for(Statement i : b.members) {
+                V(i, tm);
+            } 
+
+        } else {
         throw new IllegalArgumentException("should never reach here");
+    }
+        //---------------------------
     }
 
     public static void main(String args[]) {

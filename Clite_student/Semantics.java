@@ -64,7 +64,71 @@ public class Semantics {
             return new IntValue(v1.intValue( ) * v2.intValue( ));
         if (op.val.equals(Operator.INT_DIV)) 
             return new IntValue(v1.intValue( ) / v2.intValue( ));
-        // student exercise
+        //student exercise
+        //-------------------------------
+        if (op.val.equals(Operator.INT_EQ))
+			return new BoolValue(v1.intValue( ) == v2.intValue( ));
+        if (op.val.equals(Operator.FLOAT_PLUS)) 
+            return new FloatValue(v1.floatValue( ) + v2.floatValue( ));
+        if (op.val.equals(Operator.FLOAT_MINUS)) 
+            return new FloatValue(v1.floatValue( ) - v2.floatValue( ));
+        if (op.val.equals(Operator.FLOAT_TIMES)) 
+            return new FloatValue(v1.floatValue( ) * v2.floatValue( ));
+        if (op.val.equals(Operator.FLOAT_DIV)) 
+            return new FloatValue(v1.floatValue( ) / v2.floatValue( ));
+
+        if (op.val.equals(Operator.INT_LT))
+            return new BoolValue(v1.intValue( ) < v2.intValue( ));
+        if (op.val.equals(Operator.INT_LE))
+            return new BoolValue(v1.intValue( ) <= v2.intValue( ));
+        if (op.val.equals(Operator.INT_EQ))
+            return new BoolValue(v1.intValue( ) == v2.intValue( ));
+        if (op.val.equals(Operator.INT_NE))
+            return new BoolValue(v1.intValue( ) != v2.intValue( ));
+        if (op.val.equals(Operator.INT_GT))
+            return new BoolValue(v1.intValue( ) > v2.intValue( ));
+        if (op.val.equals(Operator.INT_GE))
+            return new BoolValue(v1.intValue( ) >= v2.intValue( ));
+
+        if (op.val.equals(Operator.FLOAT_LT))
+            return new BoolValue(v1.floatValue( ) <  v2.floatValue( ));
+        if (op.val.equals(Operator.FLOAT_LE))
+            return new BoolValue(v1.floatValue( ) <= v2.floatValue( ));
+        if (op.val.equals(Operator.FLOAT_EQ))
+            return new BoolValue(v1.floatValue( ) == v2.floatValue( ));
+        if (op.val.equals(Operator.FLOAT_NE))
+            return new BoolValue(v1.floatValue( ) != v2.floatValue( ));
+        if (op.val.equals(Operator.FLOAT_GT))
+            return new BoolValue(v1.floatValue( ) >  v2.floatValue( ));
+        if (op.val.equals(Operator.FLOAT_GE))
+            return new BoolValue(v1.floatValue( ) >= v2.floatValue( ));
+
+        if (op.val.equals(Operator.CHAR_LT))
+            return new BoolValue(v1.charValue( ) <  v2.charValue( ));
+        if (op.val.equals(Operator.CHAR_LE))
+            return new BoolValue(v1.charValue( ) <= v2.charValue( ));
+        if (op.val.equals(Operator.CHAR_EQ))
+            return new BoolValue(v1.charValue( ) == v2.charValue( ));
+        if (op.val.equals(Operator.CHAR_NE))
+            return new BoolValue(v1.charValue( ) != v2.charValue( ));
+        if (op.val.equals(Operator.CHAR_GT))
+            return new BoolValue(v1.charValue( ) >  v2.charValue( ));
+        if (op.val.equals(Operator.CHAR_GE))
+            return new BoolValue(v1.charValue( ) >= v2.charValue( ));
+
+        if (op.val.equals(Operator.BOOL_EQ))
+            return new BoolValue(v1.boolValue( ) == v2.boolValue( ));
+        if (op.val.equals(Operator.BOOL_NE))
+            return new BoolValue(v1.boolValue( ) != v2.boolValue( ));
+        if (op.val.equals(Operator.AND))
+            return new BoolValue(v1.boolValue( ) && v2.boolValue( ));
+        if (op.val.equals(Operator.OR))
+            return new BoolValue(v1.boolValue( ) || v2.boolValue( ));
+        
+        // if (op.val.equals(Operator.NULL))
+        //     return new BoolValue(true);
+        //-------------------------------
+
         throw new IllegalArgumentException("should never reach here");
     } 
     
@@ -108,18 +172,18 @@ public class Semantics {
     public static void main(String args[]) {
         Parser parser  = new Parser(new Lexer(args[0]));
         Program prog = parser.program();
-        // prog.display();    // student exercise
+        prog.display(0);    // student exercise
         System.out.println("\nBegin type checking...");
         System.out.println("Type map:");
         TypeMap map = StaticTypeCheck.typing(prog.decpart);
-        // map.display();    // student exercise
+        map.display();    // student exercise
         StaticTypeCheck.V(prog);
         Program out = TypeTransformer.T(prog, map);
         System.out.println("Output AST");
-        // out.display();    // student exercise
+        out.display(0);    // student exercise
         Semantics semantics = new Semantics( );
         State state = semantics.M(out);
         System.out.println("Final State");
-        // state.display( );  // student exercise
+        state.display( );  // student exercise
     }
 }

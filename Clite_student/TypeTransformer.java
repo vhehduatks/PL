@@ -28,8 +28,20 @@ public class TypeTransformer {
                 return new Binary(b.op.boolMap(b.op.val), t1,t2);
             throw new IllegalArgumentException("should never reach here");
         }
-        // student exercise
-        throw new IllegalArgumentException("should never reach here");
+        // student exercise-----------------
+            if (e instanceof Unary) {
+                Unary u = (Unary)e;
+                Type type = StaticTypeCheck.typeOf(u.term, tm);
+                Expression t0 = T (u.term, tm);
+                if ((type == Type.BOOL) && (u.op.NotOp())) 
+                    return new Unary(u.op.boolMap(u.op.val), t0);
+                else if ((type == Type.FLOAT) && (u.op.NegateOp())) 
+                    return new Unary(u.op.floatMap(u.op.val), t0);
+                else if ((type == Type.INT) && (u.op.NegateOp()))
+                    return new Unary(u.op.intMap(u.op.val), t0);
+            }
+        // ----------------------------------
+                    throw new IllegalArgumentException("should never reach here");
     }
 
     public static Statement T (Statement s, TypeMap tm) {
